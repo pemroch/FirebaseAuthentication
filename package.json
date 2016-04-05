@@ -1,0 +1,11 @@
+{
+  "name": "firebase-authentication",
+  "version": "1.0.0",
+  "description": "Firbase Client Side Authentication",
+  "main": "server.js",
+  "author": "Pedro E Rocha",
+  "dependencies": {
+    "express": "~3.4.4",
+    "firebase": "^2.4.1"
+  }
+}

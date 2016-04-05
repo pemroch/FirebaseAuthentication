@@ -1,0 +1,16 @@
+.errorRed {
+  color: rgb( 244, 67, 54 );
+  text-align: center;
+}
+.progressFull {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+.progressFull > md-progress-circular {
+  left: 50%;
+  top: 50%;
+}
+#mainColumn {
+  height: 100vh;
+}

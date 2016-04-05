@@ -1,0 +1,34 @@
+<div ng-if="login.logginIn" class="progressFull">
+  <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+</div>
+<md-toolbar>
+  <div class="md-toolbar-tools">  
+    <span flex></span>
+    <md-button ui-sref="createAccount">
+      Create Account
+    </md-button>
+  </div>
+</md-toolbar>
+<md-content ng-if="!login.logginIn" layout="column" flex>
+  <div layout="row" layout-align="center center" flex>
+    <form name="login.form" flex="50">
+      <md-input-container>
+        <label>Email</label>
+        <input type="email" ng-model="login.email" ng-change="login.error = ''" autocomplete="off" focus required/>
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" ng-model="login.password" ng-change="login.error = ''" autocomplete="new-password" required/>
+      </md-input-container>
+      <div layout="row" layout-align="end center">
+        <md-button type="button" ng-click="login.forgotPassword( $event )" class="grayFont">Forgot Password</md-button>
+      </div>      
+      <div layout="row" layout-align="center start">
+        <span ng-if="login.error" class="errorRed">{{ login.error }}</span>
+      </div>
+      <div layout="column">
+        <md-button class="md-primary md-raised" ng-click="login.submit()" ng-disabled="login.disableSubmit || ( !login.email || !login.password )">Login</md-button>
+      </div>
+    </form>
+  </div>
+</md-content>

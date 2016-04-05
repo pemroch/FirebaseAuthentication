@@ -1,0 +1,35 @@
+<div ng-if="createAccount.logginIn" class="progressFull">
+  <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+</div>
+<md-toolbar>
+  <div class="md-toolbar-tools">      
+    <span flex></span>
+    <md-button ui-sref="login">
+      Login
+    </md-button>
+  </div>
+</md-toolbar>
+<md-content ng-if="!createAccount.logginIn" layout="column" flex>
+  <div layout="row" layout-align="center center" class="md-padding md-margin" flex>
+    <form name="createAccount.form" flex="50">
+      <md-input-container>
+        <label>Company</label>
+        <input type="text" ng-model="createAccount.company" ng-change="createAccount.error = ''" autocomplete="off" focus required/>
+      </md-input-container>
+      <md-input-container>
+        <label>Email</label>
+        <input type="email" ng-model="createAccount.email" ng-change="createAccount.error = ''" autocomplete="off" required/>
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" ng-model="createAccount.password" ng-change="createAccount.error = ''" autocomplete="new-password" required/>
+      </md-input-container>     
+      <div layout="row" layout-align="center center">
+        <span ng-if="createAccount.error" class="errorRed">{{ createAccount.error }}</span>
+      </div>
+      <div layout="column">
+        <md-button class="md-primary md-raised" ng-click="createAccount.submit()" ng-disabled="createAccount.disableSubmit || ( !createAccount.company || !createAccount.email || !createAccount.password )">Create Account</md-button>
+      </div>
+    </form>
+  </div>
+</md-content>

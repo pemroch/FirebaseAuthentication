@@ -1,0 +1,46 @@
+<html>
+  
+  <head>
+    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+    <link rel="stylesheet" href="App/app.css">  
+  
+  </head>
+  
+  <body ng-app="FirebaseAuth">
+    
+    <ui-view id="mainContent" layout="column" layout-fill></ui-view>
+    
+    <!-- Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+    
+    <!-- App -->
+    <script src="App/app.js"></script>
+    <script src="App/app.config.js"></script>
+    <script src="App/app.run.js"></script>
+    <script src="App/app.controllers.js"></script>
+    <script src="App/app.services.js"></script>
+    
+    <!-- Controllers -->
+    <script src="App/UI/Admin/admin.js"></script>
+    <script src="App/UI/CreateAccount/createAccount.js"></script>
+    <script src="App/UI/Login/login.js"></script>
+    <script src="App/UI/Login/forgotPassword.js"></script>
+    
+    <!-- Services -->
+    <script src="App/UI/Services/adminReady.service.js"></script>
+    
+    <!-- Directives -->
+    <script src="App/UI/Directives/focus.directive.js"></script>
+    
+  </body>
+  
+</html>
