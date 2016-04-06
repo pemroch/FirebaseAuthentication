@@ -38,9 +38,12 @@
         controller: 'Admin as admin',
         resolve: {
           'ready': [ "AdminReadyService", function( AdminReadyService ) {
+            // Waits to request the user's credentials then uses that information to access
+            // user specific information from the server.
             return AdminReadyService();
           }],
           'reqAuth': [ "$rootScope", function( $rootScope ) {
+            // Lets our application know that a user must be logged in to access this state.
             return $rootScope.firebaseAuth.$requireAuth();
           }]
         }
