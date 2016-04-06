@@ -44,7 +44,7 @@
             vm.disableSubmit = false;
             vm.logginIn = false;
             // if unsuccessful, vm.error will be set to the error message returned from the server.
-            vm.error: result.error;
+            vm.error = result.error;
           }
         })        
       }
