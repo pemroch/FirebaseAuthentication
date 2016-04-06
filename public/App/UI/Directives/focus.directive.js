@@ -1,3 +1,4 @@
+// Directive used to automatically focus on an input once the page is loaded.
 ( function() {
   
   'use strict';
