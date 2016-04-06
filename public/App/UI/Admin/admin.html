@@ -4,7 +4,6 @@
       <span flex></span>
       <h2>Administrative</h2>
       <span flex></span>
-      <md-button ng-if="actions.title && ( actions.type === 'add' && admin.permissionsAdd === true )" ng-repeat="actions in admin.actions" ng-click="admin.act( $event, actions )">{{ actions.title }}</md-button>
       <md-button class="md-icon-button" ng-click="admin.logOut()">
         <md-icon class="material-icons">power_settings_new</md-icon>
       </md-button>
