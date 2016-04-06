@@ -27,6 +27,7 @@
     $rootScope.firebaseRef.unauth();
     
     function forgotPassword( $event ) {
+      // Dialog to display and email input to request a password reset.
       $mdDialog.show({
         controller: 'ForgotPassword',
         templateUrl: 'App/UI/Login/forgotPassword.html',
@@ -38,16 +39,22 @@
     }
     function submit( $event ) {
       if( vm.form.$valid ) {
+        // If the form is valid the submit button is disabled.
         vm.disableSubmit = true;
+        // If the form is valid the progress circle is shown.
         vm.logginIn = true;
         $rootScope.firebaseAuth.$authWithPassword({
           email: vm.email,
           password: vm.password
         }).then( function( authData ) {
+          // Credentials are used to login the user. The 'admin' state will wait for the user to be
+          // logged in then use these credentials to get a user specific UID to request user specific information from the server.
           $state.go( 'admin' );
         }).catch( function( error ) {
+          // If unsuccessful, the submit button is un-disabled and the progess cirlce is hidden.
           vm.disableSubmit = false;
           vm.logginIn = false;        
+          // if unsuccessful, vm.error is set to an error message returned from firebase.
           vm.error = error.message;
         });
       } 
